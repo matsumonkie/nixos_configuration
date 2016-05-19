@@ -51,6 +51,7 @@
         gcam = "git commit --amend -C HEAD";
         gco = "git checkout";
         gc = "git commit";
+        gp = "git push";
 
         # Ruby
         b = "bundle";
