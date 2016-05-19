@@ -18,6 +18,7 @@
       wget
       which
       zsh
+      silver-searcher
 
       # MULTIMEDIA
       chromium
