@@ -9,4 +9,6 @@
   branch = auto
   status = auto
   interactive = auto
+[push]
+  default = simple
 ''
