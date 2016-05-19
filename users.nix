@@ -6,11 +6,15 @@
     extraUsers.iori = {
       isNormalUser = true;
       uid = 1000;
-      extraGroups = ["networkmanager" "docker"];
+      group = "iori";
+      extraGroups = ["networkmanager" "docker" "system-conf"];
       shell = "/run/current-system/sw/bin/zsh";
     };
-    extraGroups = {
+
+    groups = {
+      iori = {};
       docker = {};
+      system-conf = {};
     };
   };
 }

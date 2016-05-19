@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./boot.nix
+      ./environment.nix
       ./hardware-configuration.nix
       ./i18n.nix
       ./networking.nix

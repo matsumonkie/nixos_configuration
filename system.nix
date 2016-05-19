@@ -4,5 +4,12 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     stateVersion = "16.03";
+
+    activationScripts = {
+      rights = ''
+        # group system-conf can edit system
+        chgrp system-conf /etc/nixos -R && chmod g+w /etc/nixos -R
+      '';
+    };
   };
 }

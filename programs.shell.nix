@@ -29,6 +29,7 @@
         rm = "trash";
         copy = "xclip -selection clipboard";
         paste = "xclip -o";
+        la = "ls -la";
         ".." = "cd ..";
         "..." = "cd ../..";
         "...." = "cd ../../..";
@@ -48,6 +49,8 @@
         gs = "git status -s";
         gg = "git log --pretty=oneline -n 20 --graph --abbrev-commit";
         gcam = "git commit --amend -C HEAD";
+        gco = "git checkout";
+        gc = "git commit";
 
         # Ruby
         b = "bundle";

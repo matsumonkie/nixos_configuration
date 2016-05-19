@@ -8,5 +8,9 @@
       gummiboot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+
+    initrd = {
+      supportedFilesystems = ["vfat" "ntfs" "cifs" "nfs"];
+    };
   };
 }

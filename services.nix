@@ -11,18 +11,12 @@
       desktopManager.kde4.enable = true;
 
       # trackpad
-      #multitouch = {
-      #  enable = true;
-      #  invertScroll = true;
-      #};
       synaptics = {
         enable = true;
         minSpeed = "0.1";
-        maxSpeed = "15";
-        accelFactor = "0.8";
+        maxSpeed = "10";
+        accelFactor = "0.5";
         twoFingerScroll = true;
-        #tapButtons = true;
-        #buttonsMap = [ 1 3 2 ];
 
         additionalOptions = ''
           # "Natural" scrolling
@@ -31,6 +25,15 @@
           Option "EmulateMidButtonTime" "100"
         '';
       };
+    };
+
+    openssh = {
+      #knownHosts = [
+      #  {
+          #hostNames = [ "mr_dev" ];
+          #publicKeyFile = /etc/ssh/medrefer.pub;
+      #  }
+      #];
     };
   };
 }
