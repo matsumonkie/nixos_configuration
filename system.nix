@@ -7,7 +7,7 @@
 
     activationScripts = {
       rights = ''
-        # group system-conf can edit system
+        # system-conf group can edit system
         chgrp system-conf /etc/nixos -R && chmod g+w /etc/nixos -R
       '';
     };

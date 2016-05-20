@@ -26,14 +26,5 @@
         '';
       };
     };
-
-    openssh = {
-      #knownHosts = [
-      #  {
-          #hostNames = [ "mr_dev" ];
-          #publicKeyFile = /etc/ssh/medrefer.pub;
-      #  }
-      #];
-    };
   };
 }

@@ -1,6 +1,3 @@
-{ } :
-
-''
 [user]
   name = "iori Tsu"
   email = "matsuhar@gmail.com"
@@ -11,4 +8,3 @@
   interactive = auto
 [push]
   default = simple
-''
