@@ -1,37 +1,37 @@
 # Nix
-nixe = "nix-env";
-nixc = "nix-channel";
-nixs = "nix-store";
-nixr = "nixos-rebuild";
+alias nixe="nix-env";
+alias nixc="nix-channel";
+alias nixs="nix-store";
+alias nixr="nixos-rebuild";
 
 # Util
-rm = "trash";
-copy = "xclip -selection clipboard";
-paste = "xclip -o";
-la = "ls -la";
-".." = "cd ..";
-"..." = "cd ../..";
-"...." = "cd ../../..";
-"....." = "cd ../../../..";
-"-- -" = "cd -";
-j = "fasd_cd -d";
-e = "emacsclient -nw -t";
-p = "cd $(git rev-parse --show-toplevel)";
+alias rm="trash";
+alias copy="xclip -selection clipboard";
+alias paste="xclip -o";
+alias la="ls -la";
+alias ".."="cd ..";
+alias "..."="cd ../..";
+alias "...."="cd ../../..";
+alias "....."="cd ../../../..";
+#alias "-- -"="cd -";
+alias j="fasd_cd -d";
+alias e="emacsclient -nw -t";
+#alias p="cd $(git rev-parse --show-toplevel)";
 
 # Git
-gd = "git diff";
-grhh = "git reset --hard HEAD";
-gds = "git diff --staged";
-ga = "git add";
-ggpush = "git push origin $(current_branch)";
-ggpull = "git pull origin $(current_branch)";
-gs = "git status -s";
-gg = "git log --pretty=oneline -n 20 --graph --abbrev-commit";
-gcam = "git commit --amend -C HEAD";
-gco = "git checkout";
-gc = "git commit";
-gp = "git push";
+alias gd="git diff";
+alias grhh="git reset --hard HEAD";
+alias gds="git diff --staged";
+alias ga="git add";
+#alias ggpush="git push origin $(current_branch)";
+#alias ggpull="git pull origin $(current_branch)";
+alias gs="git status -s";
+alias gg="git log --pretty=oneline -n 20 --graph --abbrev-commit";
+alias gcam="git commit --amend -C HEAD";
+alias gco="git checkout";
+alias gc="git commit";
+alias gp="git push";
 
 # Ruby
-b = "bundle";
-be = "bundle exec";
+alias b="bundle";
+alias be="bundle exec";

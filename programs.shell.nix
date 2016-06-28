@@ -1,8 +1,14 @@
-
 { config, ... }:
 
 {
   environment = {
+    interactiveShellInit =
+      let
+        cfgPath = ./config;
+        files = [/zsh.aliases /zsh.functions];
+        contents = map (file : builtins.readFile (cfgPath + file)) files;
+      in
+        builtins.foldl' (file1: file2: file1 + file2) "" contents;
     shellInit = ''
       # editor
       export EDITOR='emacsclient -nw -t'
@@ -11,10 +17,6 @@
       # no correction
       unsetopt correct_all
       COMPLETION_WAITING_DOTS="true"
-
-      function f { find . -iname "*$1*" }
-      function take () { mkdir -p "$@" && cd "$@" }
-      function fix { git commit -m "fixup! $*" };
     '';
   };
 }

@@ -19,6 +19,7 @@
       which
       zsh
       silver-searcher
+      modemmanager
 
       # MULTIMEDIA
       chromium
