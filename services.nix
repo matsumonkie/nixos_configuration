@@ -7,8 +7,8 @@
       enable = true;
 
       # desktop environment
-      displayManager.kdm.enable = true;
-      desktopManager.kde4.enable = true;
+      displayManager.sddm.enable = true;
+      desktopManager.kde5.enable = true;
 
       # trackpad
       synaptics = {

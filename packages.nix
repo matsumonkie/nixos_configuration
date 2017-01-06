@@ -7,47 +7,55 @@
     };
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      # SYSTEM
-      curl
-      fasd
-      trash-cli
-      htop
-      psmisc # killall
-      wget
-      which
-      zsh
-      silver-searcher
-      modemmanager
-      xorg.xkbcomp
+  environment = with pkgs;
+    let
+      utils = [
+        curl
+        fasd
+        htop
+        modemmanager
+        redshift
+        silver-searcher
+        trash-cli
+        psmisc # killall
+        wget
+        which
+        xorg.xev
+        xorg.xkbcomp
+        xorg.setxkbmap
+        zsh
+      ];
 
-      # MULTIMEDIA
-      chromium
-      vlc
-      #gimp
+      multimedia = [
+        chromium
+        #gimp
+        skype
+        vlc
+      ];
 
-      # DEV
-      chruby
-      docker
-      emacs
-      #firefox
-      git
-      redis
-      ruby
-      skype
-      xsel # emacs copy/paste
+      dev = [
+        docker
+        emacs
+        #firefox
+        git
+        redis
+        xsel # emacs copy/paste
+      ];
 
-      # UI
-      kde4.kde_baseapps
-      kde4.kdeadmin
-      kde4.kdenetwork
-      kde4.plasma-nm
-      kde4.kdebase_workspace
-      kde4.kdelibs
-      kde4.kdevelop
-      kde4.kdevplatform
-    ];
-  };
+      rubyDev = [
+        chruby
+        ruby
+      ];
 
+      ui = [
+        sddm
+        kde5.plasma-pa
+        kde5.plasma-nm
+        kde5.plasma-workspace
+        kde5.plasma-desktop
+        kde5.plasma-workspace-wallpapers
+        kde5.kdeplasma-addons
+      ];
+    in
+      { systemPackages = utils ++ multimedia ++ dev ++ rubyDev ++ ui; };
 }
