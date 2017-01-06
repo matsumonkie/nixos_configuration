@@ -20,6 +20,7 @@
       zsh
       silver-searcher
       modemmanager
+      xorg.xkbcomp
 
       # MULTIMEDIA
       chromium
