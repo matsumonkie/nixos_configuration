@@ -12,5 +12,9 @@
     initrd = {
       supportedFilesystems = ["vfat" "ntfs" "cifs" "nfs"];
     };
+
+    extraModprobeConfig = ''
+      options snd_hda_intel enable=0,1
+    '';
   };
 }
