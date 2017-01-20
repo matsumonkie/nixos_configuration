@@ -37,4 +37,4 @@ alias b="bundle";
 alias be="bundle exec";
 
 # Computer
-alias bepo="xkbcomp -w 0 -R/usr/share/X11/xkb /etc/nixos/config/bepo $DISPLAY";
+alias bepo="xkbcomp -w 0 -R/usr/share/X11/xkb /etc/nixos/config/xps13_bepo $DISPLAY";
