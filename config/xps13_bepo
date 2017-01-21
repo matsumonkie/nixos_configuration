@@ -20,7 +20,7 @@ xkb_keymap {
   };
 
   // defines what values (=symbols) are assigned to what keycodes
-  xkb_symbols       {
+  xkb_symbols {
     include "pc"
 
     name[Group1]= "Insertion";
@@ -92,6 +92,6 @@ xkb_keymap {
     key <AB08> { [ q, Q ],           [ slash, none ]      };
     key <AB09> { [ g, G ],           [ braceleft, none ]  };
     key <AB10> { [ h, H ],           [ braceright, none ] };
-};
+  };
 
 };
