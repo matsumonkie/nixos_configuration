@@ -3,7 +3,18 @@ xkb_keymap {
   xkb_keycodes      { include "evdev+aliases(azerty)" };
 
   // how keys are changed by modifiers
-  xkb_types         { include "complete" };
+  xkb_types         {
+    include "complete"
+
+    type "EDITION_LEVEL" {
+       modifiers = Mod4;
+       map[None] = Level1;
+       map[Mod4] = Level2;
+       level_name[Level1] = "FOoi";
+       level_name[Level2] = "BAR";
+    };
+
+  };
 
   // internal events (eg: restart X, move mouse cursor...)
   //xkb_compat      { include "complete" };
@@ -12,23 +23,41 @@ xkb_keymap {
   xkb_geometry      { include "pc(pc105)" };
 
   xkb_compatibility {
+    interpret ISO_Next_Group {
+      action = SetGroup(group=2);
+    };
+
     include "complete"
-    interpret ISO_Level3_Shift { action = SetMods(modifiers=Mod5); };
+
+    interpret ISO_Level3_Shift {
+      action = SetMods(modifiers=Mod5);
+    };
+
+//    interpret Mode_switch+Any {
+//      action = SetGroup(group=2);
+//    };
+//    interpret ISO_Next_Group {
+//	//useModMapMods= level1;
+//	action = SetGroup(group=1);
+//    };
   };
 
   // defines what values (=symbols) are assigned to what keycodes
   xkb_symbols       {
     include "pc"
 
+    modifier_map Mod4   { <TLDE> };
     modifier_map Shift   { Shift_L, Shift_R };
     modifier_map Control { Control_L, Control_R };
     modifier_map Mod5    { ISO_Level3_Shift }; // Alt Gr
+
     //modifier_map Mod3    { ISO_Level5_Shift }; // Level5
 
     name[Group1]= "Insertion";
     name[Group2]= "Edition";
 
-    key <CAPS> { type[group1] = "ONE_LEVEL",  [ ISO_Level3_Shift   ] };
+    //key <CAPS> { type[group1] = "ONE_LEVEL",  [ ISO_Level3_Shift   ] };
+    key <CAPS> { type[group1] = "ONE_LEVEL",  [ ISO_Next_Group ] };
     key <RTRN> { type[group1] = "ONE_LEVEL",  [ ISO_Level3_Shift   ] };
     key <LWIN> { type[group1] = "ONE_LEVEL",  [ Alt_L              ] };
     key <LSGT> { type[group1] = "ONE_LEVEL",  [ Shift_L            ] };
@@ -38,9 +67,11 @@ xkb_keymap {
     key <SPCE> { type[group1] = "FOUR_LEVEL", [ space, quotedbl, apostrophe, underscore ] };
 
     // NUMBER LINE
-    key <TLDE> { [ asciitilde ] };
-    key <AE01> { [ 1, ampersand ] };
-    key <AE02> { [ 2, asciitilde ] };
+    key <TLDE> { [ None ] };
+    //key <AE01> { [ 1, ampersand] };
+    //key <AE01> { type[group1] = "EDITION_LEVEL", [ a, b ] };
+    key <AE01> { [ Mode_switch ] };
+    key <AE02> { [ 2, asciitilde ], [3, 4] };
     key <AE03> { [ 3, numbersign ] };
     key <AE04> { [ 4, apostrophe ] };
     key <AE05> { [ 5, bracketleft ] };
@@ -69,7 +100,7 @@ xkb_keymap {
     key <AC01> { [ U0061, A ] }; // character 'a' doesnt work on kde, need to replace with its unicode representation
     key <AC02> { [ u, U, Delete ] };
     key <AC03> { [ i, I, BackSpace ] };
-    key <AC04> { [ e, E, Return ] };
+    key <AC04> { [ e, E ], [ Return ] };
     key <AC05> { [ period, colon, dollar, EuroSign ] };
     key <AC07> { [ c, C, ccedilla ] };
     key <AC08> { [ t, T, Left ] };

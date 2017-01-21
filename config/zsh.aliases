@@ -38,3 +38,7 @@ alias be="bundle exec";
 
 # Computer
 alias bepo="xkbcomp -w 0 -R/usr/share/X11/xkb /etc/nixos/config/xps13_bepo $DISPLAY";
+
+#bindkey "${terminfo[khome]}" beginning-of-line
+#bindkey "${terminfo[kend]}" end-of-line
+#bindkey '\eOF' end-of-line
