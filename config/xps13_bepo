@@ -33,14 +33,15 @@ xkb_keymap {
     // modifier_map Mod5 { ISO_Level3_Shift };
     // key <CAPS> { type[group1] = "ONE_LEVEL", [ ISO_Level3_Shift ] };
 
-    key <CAPS> { type[group1] = "ONE_LEVEL",  [ ISO_Next_Group ]                                                };
-    key <RTRN> { type[group1] = "ONE_LEVEL",  [ ISO_Next_Group ]                                                };
-    key <LWIN> { type[group1] = "ONE_LEVEL",  [ Alt_L              ]                                            };
-    key <LSGT> { type[group1] = "ONE_LEVEL",  [ Shift_L            ]                                            };
-    key <LFSH> { type[group1] = "ONE_LEVEL",  [ Shift_L            ]                                            };
-    key <LALT> { type[group1] = "ONE_LEVEL",  [ Control_L          ] , actions = [ SetMods(modifiers=Control) ] };
-    key <RALT> { type[group1] = "ONE_LEVEL",  [ Control_R          ] , actions = [ SetMods(modifiers=Control) ] };
-    key <SPCE> { type[group1] = "FOUR_LEVEL", [ space, quotedbl ], [ apostrophe, underscore ]                   };
+    key <CAPS> { type[group1] = "ONE_LEVEL",  [ ISO_Next_Group ]                                       };
+    key <RTRN> { type[group1] = "ONE_LEVEL",  [ ISO_Next_Group ]                                       };
+    key <LWIN> { type[group1] = "ONE_LEVEL",  [ Alt_L ]                                                };
+    key <LSGT> { type[group1] = "ONE_LEVEL",  [ Shift_L ]                                              };
+    key <LFSH> { type[group1] = "ONE_LEVEL",  [ Shift_L ]                                              };
+    key <LALT> { type[group1] = "ONE_LEVEL",  [ Control_L ] , actions = [ SetMods(modifiers=Control) ] };
+    key <RALT> { type[group1] = "ONE_LEVEL",  [ Control_R ] , actions = [ SetMods(modifiers=Control) ] };
+    key <RCTL> { type[group1] = "ONE_LEVEL",  [ Alt_R ]                                                };
+    key <SPCE> { type[group1] = "FOUR_LEVEL", [ space, quotedbl ], [ apostrophe, underscore ]          };
 
     // NUMBER LINE
     key <TLDE> { [ asciitilde ]                              };
