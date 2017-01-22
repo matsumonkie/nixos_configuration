@@ -82,7 +82,7 @@ xkb_keymap {
     key <AC10> { [ r, R ],          [ Down ]             };
     key <AC11> { [ n, N ],          [ Right ]            };
 
-    // FOURTH LINE
+    // THIRD LINE
     key <AB01> { [ x, X ],           [less, at ]          };
     key <AB02> { [ egrave, agrave ], [ greater ]          };
     key <AB03> { [ w, W ],           [ exclam ]           };
